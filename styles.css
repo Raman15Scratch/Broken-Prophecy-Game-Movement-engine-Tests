@@ -29,7 +29,7 @@ body {
     image-rendering: pixelated; 
 }
 
-/* Floating Mobile D-Pad Layout */
+/* Floating Mobile D-Pad Layout - Always Visible */
 #controls {
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ body {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    z-index: 10; /* Ensures buttons stay above map graphics */
+    z-index: 10;
 }
 
 .middle-row {
@@ -53,16 +53,15 @@ body {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 50%; /* Rounded layout looks clean for on-screen sticks */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     touch-action: manipulation;
-    opacity: 0.3; /* Highly transparent by default */
+    opacity: 0.3;
     transition: opacity 0.1s ease, background-color 0.1s ease;
 }
 
-/* Light up instantly when tapped or held down */
 .btn:active {
     opacity: 0.8; 
     background-color: rgba(255, 255, 255, 0.4);
@@ -74,8 +73,5 @@ body {
     height: 55px;
 }
 
-@media (min-width: 1366px) and (hover: hover) {
-    #controls {
-        display: none;
-    }
-}
+/* REMOVED THE MEDIA QUERY BLOCK ENTIRELY */
+/* This ensures the D-pad will show up on all computers, laptops, and tablets */
